@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hybrid Library</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="auth">
+  <div class="authbox">
+    <div class="brand"><span class="logo">L</span> Hybrid Library</div>
+    <p class="mute">Search books, find the exact shelf, reserve and collect.</p>
+    <div class="tabs"><button id="tLogin" class="on" onclick="authTab('login')">Login</button><button id="tReg" onclick="authTab('reg')">Register</button></div>
+    <form id="fLogin" onsubmit="login(event)">
+      <label>Email<input id="lEmail" type="email" required></label>
+      <label>Password<input id="lPass" type="password" required minlength="6"></label>
+      <button class="btn" type="submit">Login</button>
+      <p class="mute">Demo: <a href="#" onclick="demo('student');return false">Student</a> · <a href="#" onclick="demo('librarian');return false">Librarian</a></p>
+    </form>
+    <form id="fReg" onsubmit="register(event)" hidden>
+      <label>Full name<input id="rName" required></label>
+      <label>Roll number (optional)<input id="rRoll"></label>
+      <label>Email<input id="rEmail" type="email" required></label>
+      <label>Password<input id="rPass" type="password" required minlength="6"></label>
+      <button class="btn" type="submit">Create account</button>
+    </form>
+  </div>
+</div>
+
+<div id="app" hidden>
+  <aside><div class="brand"><span class="logo">L</span> Hybrid Library</div><nav id="nav"></nav></aside>
+  <main>
+    <header>
+      <h1 id="title"></h1>
+      <button id="bell" class="bell" onclick="go('notes')" hidden aria-label="Notifications">&#128276;<span id="bellN" class="bellN" hidden></span></button>
+      <span id="who" class="mute"></span>
+      <button class="btn alt sm" onclick="logout()">Log out</button>
+    </header>
+    <section id="content"></section>
+  </main>
+</div>
+
+<div id="modal" hidden onclick="if(event.target===this)closeModal()"><div class="mcard" id="modalBody"></div></div>
+<div id="toast" role="status"></div>
+<script src="app.js"></script>
+</body>
+</html>
