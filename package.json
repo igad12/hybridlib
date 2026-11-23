@@ -1,0 +1,14 @@
+{
+  "name": "hybrid-library",
+  "version": "1.0.0",
+  "description": "Hybrid Library with a real Express server and SQLite database",
+  "main": "server.js",
+  "scripts": { "start": "node server.js" },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "better-sqlite3": "^11.5.0",
+    "express": "^4.21.0",
+    "jsonwebtoken": "^9.0.2",
+    "node-cron": "^3.0.3"
+  }
+}
